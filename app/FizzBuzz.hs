@@ -1,5 +1,7 @@
-fizzbuzz :: Integer -> [String]
-fizzbuzz n = [whatisit x | x <- [1..n]]
+module FizzBuzz where
+
+boompop :: Integer -> [String]
+boompop n = [whatisit x | x <- [1..n]]
 
 whatisit :: Integer -> String
 whatisit x
@@ -8,5 +10,5 @@ whatisit x
     | x `mod` 5 == 0 = "buzz"
     | otherwise = show x
 
-main :: IO ()
-main = putStrLn $ unlines $ fizzbuzz 100
+fizzbuzz :: IO [String]
+fizzbuzz = return $ boompop 100
